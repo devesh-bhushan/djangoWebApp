@@ -109,7 +109,10 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+<<<<<<< HEAD
 .idea
+=======
+>>>>>>> 956de0edf7301f4195eaaf0589707b7837955108
 
 # Spyder project settings
 .spyderproject
@@ -127,4 +130,8 @@ venv.bak/
 dmypy.json
 
 # Pyre type checker
+<<<<<<< HEAD
 .pyre/
+=======
+.pyre/
+
