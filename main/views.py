@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator
 
-from main.models import Post
+from main.models import Post, WorkExperience, Project, Certificate
 
 from main.forms import ContactForm
 
@@ -13,7 +13,13 @@ from django.contrib import messages
 
 # Create your views here.
 def index(request):
-    return render(request, 'main/index.html')
+    work_experience = WorkExperience.objects.all()
+    project = Project.objects.all()
+    certificate = Certificate.objects.all()
+
+    context = {'work_experience': work_experience, 'project': project, 'certificate': certificate}
+
+    return render(request, 'main/index.html', context)
 
 
 def blog(request):
@@ -43,9 +49,8 @@ def contact(request):
         message = instance.message
 
         EmailMessage(
-            'New message from %s' % name,
-            'Hi Devesh , new message form this email address: %s\n\n Message: %s' % (
-                email, message),
+            'New message from %s' %name,
+            'Hi admin, new message form this email address: %s\n\n Message: %s' %(email, message),
             conf_settings.EMAIL_HOST_USER,
             ['deepubhushan123@gmail.com', ],
         ).send()

@@ -3,6 +3,14 @@
 
 {% block title %}Mysite | Contact{% endblock %}
 
+{% block style %}
+<style>
+    .asteriskField {
+        color: red;
+    }
+</style>
+{% endblock %}
+
 {% block main-content %}
 
 {% if messages %}
@@ -16,7 +24,8 @@
     {% endfor %}
 {% endif %}
 
-<div class="container text-center mt-5 mb-5">
+<div class="container mt-5 mb-5" style="max-width: 600px;">
+    <h1 class="text-center mb-5"><b>Contact Form</b></h1>
     <form method="POST">
         {% csrf_token %}
         {{ form|crispy }}
