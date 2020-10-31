@@ -4,11 +4,46 @@
 
 {% block content %}
 
-{% for post in posts %}
+<!-- Navbar section -->
+<nav class="navbar navbar-expand-md">
+    <!-- Brand -->
+    <a class="navbar-brand ml-2 ml-lg-5">Devesh Bhushan</a>
+  
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <i class="navbar-toggler-icon fas fa-bars"></i>
+    </button>
+  
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-lg-auto ml-2 mr-lg-5">
+            <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'blog' %}">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </div>
+</nav>
 
-<h1>{{ post.title }}</h1>
-<p>{{ post.content | safe }}</p>
+{% block main-content %}
 
-{% endfor %}
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}
+
+<!-- Footer section -->
+<div class="footer pt-5">
+    <div class="container-lg">
+        <div class="row">
+            <div class="col-sm-12 col-md-12">
+                <p class="text-center" style="font-size: 26px; margin-bottom: -1px;">Made with <i class="fas fa-heart" style="font-size: 18px; color: red;"></i></p>
+                <ul class="list-unstyled list-inline social text-center">
+                    <li class="list-inline-item mr-3"><a href="https://github.com/devesh-bhushan" target="_blank"><i class="fab fa-github"></i></a></li>
+                    <li class="list-inline-item mr-3"><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    <li class="list-inline-item mr-3"><a href="https://www.linkedin.com/in/devesh-bhushan-284b381aa/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li class="list-inline-item"><a href="mailto:deepubhushan123@gmail.com" target="_blank"><i class="far fa-envelope"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
